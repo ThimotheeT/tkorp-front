@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className="h-full bg-gray-100">
-      <body className="h-full">
+    <html lang="fr" className="h-full">
+      <body className="h-full bg-gradient-to-r from-blue-100 to-green-100">
         <div className="min-h-full">
           <Navigation />
           <main className="py-10">
