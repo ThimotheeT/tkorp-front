@@ -1,5 +1,5 @@
-import { loadData } from '@/utils/dataLoader';
 import Link from 'next/link';
+import { fetchAnimalById, fetchPersonById } from '@/utils/dataFetcher';
 
 function calculateAge(dateOfBirth) {
   const birthDate = new Date(dateOfBirth);
@@ -12,23 +12,25 @@ function calculateAge(dateOfBirth) {
   return age;
 }
 
-export async function generateStaticParams() {
-  const { animals } = loadData();
-  return animals.map((animal) => ({
-    id: animal.id.toString(),
-  }));
-}
-
-export default function AnimalDetails({ params }) {
-  const { animals, persons } = loadData();
-  const animal = animals.find((a) => a.id.toString() === params.id);
+export default async function AnimalDetails({ params }) {
+  const animal = await fetchAnimalById(params.id);
 
   if (!animal) return <div className="text-center py-10 text-red-600">Animal non trouvé</div>;
 
   const age = calculateAge(animal.dateOfBirth);
   
-  const owner = persons.find(person => person.id === animal.personId);
-  const ownerName = owner ? `${owner.firstName} ${owner.lastName}` : "Propriétaire inconnu";
+  let owner = null;
+  let ownerName = "Propriétaire inconnu";
+
+  if (animal.owner) {
+    owner = animal.owner;
+    ownerName = `${owner.firstName} ${owner.lastName}`;
+  } else if (animal.ownerId) {
+    owner = await fetchPersonById(animal.ownerId);
+    if (owner) {
+      ownerName = `${owner.firstName} ${owner.lastName}`;
+    }
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

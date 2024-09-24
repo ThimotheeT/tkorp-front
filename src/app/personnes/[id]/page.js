@@ -1,13 +1,12 @@
-import { loadData } from '@/utils/dataLoader';
 import Link from 'next/link';
+import { fetchPersonById, fetchAnimalsByPersonId } from '@/utils/dataFetcher';
 
-export default function PersonneDetails({ params }) {
-  const data = loadData();
-  const person = data.persons.find((p) => p.id.toString() === params.id);
-
+export default async function PersonneDetails({ params }) {
+  const person = await fetchPersonById(params.id);
+  
   if (!person) return <div className="text-center py-10 text-red-600">Personne non trouvée</div>;
 
-  const animauxPossedes = data.animals.filter(animal => animal.personId === person.id);
+  const animauxPossedes = await fetchAnimalsByPersonId(person.id);
   const nombreAnimaux = animauxPossedes.length;
 
   return (
