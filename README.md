@@ -9,12 +9,12 @@ avec des données de personnes et d'animaux.
 
 # Fonctionnalités Principales
 
--Affichage paginé de la liste des personnes
--Affichage paginé de la liste des animaux
--Page de détails pour chaque personne, incluant le nombre d'animaux possédés
--Page de détails pour chaque animal, incluant les informations sur son propriétaire
--Barre de navigation pour une navigation facile entre les pages
--Design responsive pour une expérience utilisateur optimale sur tous les appareils
+- Affichage paginé de la liste des personnes
+- Affichage paginé de la liste des animaux
+- Page de détails pour chaque personne, incluant le nombre d'animaux possédés
+- Page de détails pour chaque animal, incluant les informations sur son propriétaire
+- Barre de navigation pour une navigation facile entre les pages
+- Design responsive pour une expérience utilisateur optimale sur tous les appareils
 
 # Technologies Utilisées
 
@@ -24,26 +24,22 @@ NestJS pour l'API backend
 
 # Installation et Lancement
 
--Clonez ce dépôt
--Installez les dépendances du frontend : npm install
--Clonez l'API backend Nest : https://github.com/ThimotheeT/tkorp-back
--Lancez l'application frontend en mode développement : npm run dev
--Ouvrez http://localhost:3000 dans votre navigateur
+- Clonez ce dépôt
+- Installez les dépendances du frontend : `npm install`
+- Clonez l'API backend Nest : https://github.com/ThimotheeT/tkorp-back
+- Lancez l'application frontend en mode développement : `npm run dev`
+- Ouvrez http://localhost:3000 dans votre navigateur
 
 # Structure du Projet
 
--components/ : Composants réutilisables (Navigation, Pagination)
--public/ : Fichiers statiques (images)
--app/ : Pages de l'application
--utils/ : Services pour interagir avec l'API backend
+- components/ : Composants réutilisables (Navigation, Pagination)
+- public/ : Fichiers statiques (images)
+- app/ : Pages de l'application
+- utils/ : Services pour interagir avec l'API backend
 
 # Temps de Réalisation
 
 Ce projet a été réalisé en approximativement 3 heures.
-
-# Auteur
-
-Terrassier Thimothée
 
 # Remarques
 
