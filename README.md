@@ -26,9 +26,9 @@ NestJS pour l'API backend
 
 - Clonez ce dépôt
 - Installez les dépendances du frontend : `npm install`
-- Clonez l'API backend Nest : https://github.com/ThimotheeT/tkorp-back
+- Clonez l'API backend Nest : https://github.com/ThimotheeT/tkorp-back et suivre les indications de lancement
 - Lancez l'application frontend en mode développement : `npm run dev`
-- Ouvrez http://localhost:3000 dans votre navigateur
+- Ouvrez http://localhost:3001 dans votre navigateur (si vous lancez l'API en premier sur 3000)
 
 # Structure du Projet
 
