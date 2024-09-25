@@ -18,9 +18,9 @@ avec des données de personnes et d'animaux.
 
 # Technologies Utilisées
 
-NextJS pour le frontend
-Tailwind CSS pour le styling
-NestJS pour l'API backend
+- NextJS pour le frontend
+- Tailwind CSS pour le style
+- NestJS pour l'API backend
 
 # Installation et Lancement
 
